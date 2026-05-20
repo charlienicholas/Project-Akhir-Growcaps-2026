@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Growcaps - Project Akhir</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body class="bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white font-main">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-transparent">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#home" class="text-xl font-bold tracking-tight flex items-center gap-2 text-white">SapuSapu</a>
+
+        <div class="hidden lg:flex items-center gap-8 font-medium text-white">
+          <a href="#home" class="nav-link hover:opacity-80 transition">Home</a>
+          <a href="#about" class="nav-link hover:opacity-80 transition">About</a>
+          <a href="#team" class="nav-link hover:opacity-80 transition">Team</a>
+          <a href="#project" class="nav-link hover:opacity-80 transition">Project</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/20 transition cursor-pointer text-white" aria-label="Toggle theme">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+            </svg>
+          </button>
+
+          <button id="hamburger" class="lg:hidden p-2 rounded-full hover:bg-white/20 transition cursor-pointer text-white" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 cursor-pointer"></div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-[65%] max-w-sm bg-white dark:bg-slate-800 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="p-6">
+        <div class="flex justify-end">
+          <button id="close-menu" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition cursor-pointer" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-6 mt-8 text-lg font-medium text-slate-900 dark:text-white">
+          <a href="#home" class="mobile-nav-link hover:text-primary transition">Home</a>
+          <a href="#about" class="mobile-nav-link hover:text-primary transition">About</a>
+          <a href="#team" class="mobile-nav-link hover:text-primary transition">Team</a>
+          <a href="#project" class="mobile-nav-link hover:text-primary transition">Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-linear-to-b from-sky-blue to-[#9cbcdb] text-white overflow-hidden">
+      <div class="text-center z-10 px-4 max-w-4xl">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">SapuSapu Team</h1>
+        <p class="text-lg md:text-xl text-blue-50/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+          Kami adalah kelompok pengembang yang bersemangat dalam menciptakan solusi teknologi inovatif untuk masa depan yang lebih baik.
+        </p>
+        <a href="#about" class="inline-block bg-white text-slate-900 px-8 py-3 rounded-full font-semibold hover:bg-slate-100 transition shadow-lg">
+          Explore More
+        </a>
+      </div>
+      <div class="absolute bottom-0 left-0 w-full leading-none">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="w-full h-auto" style="height: 80px;">
+          <path d="M0,120 C360,0 720,120 1440,40 L1440,120 L0,120 Z" fill="white" class="fill-white dark:fill-slate-900"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 md:py-28 bg-light-gray dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 text-slate-900 dark:text-white">Tentang Kami</h2>
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="text-lg leading-relaxed mb-6 text-gray-700 dark:text-gray-300">
+            Kami adalah <span class="font-semibold text-dark-blue dark:text-sky-blue">SapuSapu</span>, sebuah kelompok yang terdiri dari individu-individu kreatif dan inovatif yang berdedikasi dalam pengembangan web. Berdiri sejak tahun 2026, kami berkomitmen untuk menciptakan solusi digital yang tidak hanya fungsional tetapi juga estetis dan user-friendly.
+          </p>
+          <p class="text-lg leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
+            Dengan semangat kolaborasi dan pembelajaran berkelanjutan, kami terus mengembangkan kemampuan di berbagai bidang teknologi untuk menghasilkan karya yang berdampak positif.
+          </p>
+          <a href="#team" class="text-dark-blue dark:text-sky-blue font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all text-lg">
+            Kenali Lebih Lanjut
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section id="team" class="py-20 md:py-28 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900 dark:text-white">Anggota Tim</h2>
+        <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-xl mx-auto">Kenali lebih dekat anggota tim kami yang berbakat dan berdedikasi.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Member 1 -->
+          <div class="group bg-white dark:bg-slate-800 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-square overflow-hidden bg-sky-blue/20">
+              <img src="assets/img/contoh_tim.jpeg" alt="Charlie Nicholas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Charlie Nicholas</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">Project Lead & Full Stack Developer yang berfokus pada koordinasi tim dan pengembangan website.</p>
+              <a href="html/member/member-1.html" class="text-dark-blue dark:text-sky-blue font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+                Lihat Profile
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="group bg-white dark:bg-slate-800 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-square overflow-hidden bg-sky-blue/20">
+              <img src="assets/img/contoh_tim.jpeg" alt="Ahmad Fauzi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Ahmad Fauzi</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">Frontend Developer yang fokus pada pengalaman pengguna dan antarmuka yang responsif.</p>
+              <a href="html/member/member-2.html" class="text-dark-blue dark:text-sky-blue font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+                Lihat Profile
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="group bg-white dark:bg-slate-800 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-square overflow-hidden bg-sky-blue/20">
+              <img src="assets/img/contoh_tim.jpeg" alt="Sarah Putri" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Sarah Putri</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">UI/UX Designer yang menciptakan tampilan visual menarik dan pengalaman pengguna yang intuitif.</p>
+              <a href="html/member/member-3.html" class="text-dark-blue dark:text-sky-blue font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+                Lihat Profile
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="group bg-white dark:bg-slate-800 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-square overflow-hidden bg-sky-blue/20">
+              <img src="assets/img/contoh_tim.jpeg" alt="David Pratama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">David Pratama</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">Backend Developer yang menangani logika server, database, dan arsitektur sistem.</p>
+              <a href="html/member/member-4.html" class="text-dark-blue dark:text-sky-blue font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+                Lihat Profile
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="project" class="py-20 md:py-28 bg-light-gray dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900 dark:text-white">Project Kami</h2>
+        <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-xl mx-auto">Berikut adalah project yang sedang kami kembangkan.</p>
+        <div class="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-md p-8 md:p-12 border border-gray-100 dark:border-slate-700">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">Project Akhir Growcaps 2026</h3>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+            Sebuah website portofolio kelompok yang menampilkan profil tim, anggota, dan project yang dikerjakan. Website ini dibangun menggunakan teknologi web modern dengan desain yang responsif, interaktif, dan accessible. Tujuan utama dari project ini adalah untuk menunjukkan kemampuan kolaboratif tim dalam mengembangkan solusi web yang lengkap dan profesional.
+          </p>
+          <div class="mb-6">
+            <h4 class="font-semibold text-lg mb-4 text-slate-900 dark:text-white">Tech Stack:</h4>
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-sky-blue/20 text-dark-blue dark:text-sky-blue px-4 py-2 rounded-full text-sm font-medium">HTML5</span>
+              <span class="bg-sky-blue/20 text-dark-blue dark:text-sky-blue px-4 py-2 rounded-full text-sm font-medium">Tailwind CSS v4</span>
+              <span class="bg-sky-blue/20 text-dark-blue dark:text-sky-blue px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+              <span class="bg-sky-blue/20 text-dark-blue dark:text-sky-blue px-4 py-2 rounded-full text-sm font-medium">SVG</span>
+              <span class="bg-sky-blue/20 text-dark-blue dark:text-sky-blue px-4 py-2 rounded-full text-sm font-medium">Git</span>
+            </div>
+          </div>
+          <a href="https://github.com/charlienicholas/Project-Akhir-Growcaps-2026" target="_blank" class="inline-flex items-center gap-2 bg-dark-blue text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-5"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Lihat di GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-dark-blue text-white">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <div class="text-xl font-bold tracking-tight mb-2">SapuSapu</div>
+        <p class="text-blue-200 text-sm">&copy; 2026 SapuSapu Team. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="src/js/script.js"></script>
+  </body>
+</html>
