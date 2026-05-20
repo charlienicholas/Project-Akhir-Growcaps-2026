@@ -6,9 +6,7 @@
 
 @theme {
   --font-main: "Montserrat", sans-serif;
-  --color-sky-blue: #C5BAFF;
+  --color-sky-blue: #c5baff;
   --color-dark-blue: #003285;
   --color-light-gray: #f5f5f5;
-  --color-primary: #003285;
-  --color-accent: #FF6B6B;
 }

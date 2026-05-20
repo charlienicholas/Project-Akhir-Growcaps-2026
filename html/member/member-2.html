@@ -6,24 +6,27 @@
     <title>Profile - Ahmad Fauzi</title>
     <link rel="stylesheet" href="../../src/css/style.css" />
   </head>
-  <body class="bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white font-main">
-
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-transparent">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="../../index.html" class="text-xl font-bold tracking-tight flex items-center gap-2 text-white">SapuSapu</a>
-        <div class="hidden lg:flex items-center gap-8 font-medium text-white">
-          <a href="../../index.html#home" class="nav-link hover:opacity-80 transition">Home</a>
-          <a href="../../index.html#about" class="nav-link hover:opacity-80 transition">About</a>
-          <a href="../../index.html#team" class="nav-link hover:opacity-80 transition">Team</a>
-          <a href="../../index.html#project" class="nav-link hover:opacity-80 transition">Project</a>
+  <body class="bg-white font-main text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white">
+    <nav id="navbar" class="fixed left-1/2 top-4 z-50 w-[calc(100%-1rem)] max-w-7xl -translate-x-1/2 rounded-full bg-transparent text-white transition-all duration-300 ease-in-out">
+      <div class="flex items-center justify-between px-6 py-4">
+        <a href="../../index.html" class="flex items-center gap-2 text-xl font-bold tracking-tight">SapuSapu</a>
+        <div class="hidden items-center gap-8 font-medium lg:flex">
+          <a href="../../index.html#home" class="nav-link transition hover:opacity-80">Home</a>
+          <a href="../../index.html#about" class="nav-link transition hover:opacity-80">About</a>
+          <a href="../../index.html#team" class="nav-link transition hover:opacity-80">Team</a>
+          <a href="../../index.html#project" class="nav-link transition hover:opacity-80">Project</a>
         </div>
         <div class="flex items-center gap-2">
-          <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/20 transition cursor-pointer text-white" aria-label="Toggle theme">
+          <button id="theme-toggle" class="cursor-pointer rounded-full p-2 transition hover:bg-white/20" aria-label="Toggle theme">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+              />
             </svg>
           </button>
-          <button id="hamburger" class="lg:hidden p-2 rounded-full hover:bg-white/20 transition cursor-pointer text-white" aria-label="Menu">
+          <button id="hamburger" class="cursor-pointer rounded-full p-2 transition hover:bg-white/20 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menu">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
@@ -32,41 +35,38 @@
       </div>
     </nav>
 
-    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 cursor-pointer"></div>
+    <div id="menu-overlay" class="fixed inset-0 z-40 hidden cursor-pointer bg-black/50 transition-opacity duration-300"></div>
 
-    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-[65%] max-w-sm bg-white dark:bg-slate-800 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div id="mobile-menu" class="fixed right-0 top-0 z-50 h-full w-[65%] max-w-sm translate-x-full bg-white shadow-2xl transition-transform duration-300 ease-in-out dark:bg-slate-800">
       <div class="p-6">
         <div class="flex justify-end">
-          <button id="close-menu" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition cursor-pointer" aria-label="Close menu">
+          <button id="close-menu" class="cursor-pointer rounded-full p-2 transition hover:bg-gray-100 dark:hover:bg-slate-700" aria-label="Close menu">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <div class="flex flex-col gap-6 mt-8 text-lg font-medium text-slate-900 dark:text-white">
-          <a href="../../index.html#home" class="mobile-nav-link hover:text-primary transition">Home</a>
-          <a href="../../index.html#about" class="mobile-nav-link hover:text-primary transition">About</a>
-          <a href="../../index.html#team" class="mobile-nav-link hover:text-primary transition">Team</a>
-          <a href="../../index.html#project" class="mobile-nav-link hover:text-primary transition">Project</a>
+        <div class="mt-8 flex flex-col gap-6 text-lg font-medium text-slate-900 dark:text-white">
+          <a href="../../index.html#home" class="mobile-nav-link transition hover:text-dark-blue dark:hover:text-sky-blue">Home</a>
+          <a href="../../index.html#about" class="mobile-nav-link transition hover:text-dark-blue dark:hover:text-sky-blue">About</a>
+          <a href="../../index.html#team" class="mobile-nav-link transition hover:text-dark-blue dark:hover:text-sky-blue">Team</a>
+          <a href="../../index.html#project" class="mobile-nav-link transition hover:text-dark-blue dark:hover:text-sky-blue">Project</a>
         </div>
       </div>
     </div>
 
-    <section class="bg-linear-to-b from-sky-blue to-[#9cbcdb] py-20 md:py-28 text-white">
+    <section class="bg-linear-to-b from-sky-blue to-[#9cbcdb] py-20 text-white transition-colors duration-300 dark:from-slate-950 dark:to-slate-800 md:py-28">
       <div class="max-w-7xl mx-auto px-4 text-center">
         <div class="w-48 h-48 md:w-56 md:h-56 rounded-full mx-auto mb-6 overflow-hidden border-4 border-white/50 shadow-lg">
-          <img src="../../assets/img/contoh_tim.jpeg" alt="Ahmad Fauzi" class="w-full h-full object-cover">
+          <img src="../../assets/img/contoh_tim.jpeg" alt="Ahmad Fauzi" class="w-full h-full object-cover" />
         </div>
         <h1 class="text-4xl md:text-5xl font-bold mb-2">Ahmad Fauzi</h1>
         <p class="text-xl md:text-2xl text-blue-50/90 italic mb-4">"Design with passion"</p>
-        <p class="text-blue-50/80 max-w-2xl mx-auto leading-relaxed">
-          Frontend Developer yang fokus pada pengalaman pengguna dan antarmuka yang responsif. Berpengalaman dalam membangun aplikasi web modern dengan framework terkini.
-        </p>
+        <p class="text-blue-50/80 max-w-2xl mx-auto leading-relaxed">Frontend Developer yang fokus pada pengalaman pengguna dan antarmuka yang responsif. Berpengalaman dalam membangun aplikasi web modern dengan framework terkini.</p>
       </div>
     </section>
 
     <main class="max-w-4xl mx-auto px-4 py-16 md:py-20">
-
       <section class="mb-16">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Informasi Pribadi</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -184,13 +184,31 @@
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Galeri Pribadi</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 opacity-50"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.41a2.25 2.25 0 0 1 3.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 opacity-50">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.41a2.25 2.25 0 0 1 3.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+              />
+            </svg>
           </div>
           <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 opacity-50"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.41a2.25 2.25 0 0 1 3.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 opacity-50">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.41a2.25 2.25 0 0 1 3.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+              />
+            </svg>
           </div>
           <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 opacity-50"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.41a2.25 2.25 0 0 1 3.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 opacity-50">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.41a2.25 2.25 0 0 1 3.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+              />
+            </svg>
           </div>
         </div>
       </section>
@@ -199,19 +217,36 @@
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Kontak</h2>
         <div class="flex gap-4 flex-wrap justify-center md:justify-start">
           <a href="mailto:ahmad@example.com" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+              />
+            </svg>
             Email
           </a>
           <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-5">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
             LinkedIn
           </a>
           <a href="https://github.com" target="_blank" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-5"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-5">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
             GitHub
           </a>
           <a href="https://instagram.com" target="_blank" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75h-9A3.75 3.75 0 0 0 3.75 7.5v9a3.75 3.75 0 0 0 3.75 3.75h9a3.75 3.75 0 0 0 3.75-3.75v-9a3.75 3.75 0 0 0-3.75-3.75Z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75h-9A3.75 3.75 0 0 0 3.75 7.5v9a3.75 3.75 0 0 0 3.75 3.75h9a3.75 3.75 0 0 0 3.75-3.75v-9a3.75 3.75 0 0 0-3.75-3.75Z" />
+            </svg>
             Instagram
           </a>
         </div>
@@ -246,13 +281,12 @@
           Kembali ke Tim
         </a>
       </div>
-
     </main>
 
-    <footer class="py-8 bg-dark-blue text-white">
+    <footer class="bg-dark-blue py-8 text-white transition-colors duration-300 dark:bg-slate-950">
       <div class="max-w-7xl mx-auto px-4 text-center">
         <div class="text-xl font-bold tracking-tight mb-2">SapuSapu</div>
-        <p class="text-blue-200 text-sm">&copy; 2026 SapuSapu Team. All rights reserved.</p>
+        <p class="text-sm text-blue-200 dark:text-gray-400">&copy; 2026 SapuSapu Team. All rights reserved.</p>
       </div>
     </footer>
 
