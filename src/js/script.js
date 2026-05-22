@@ -36,7 +36,7 @@ if (hamburger) {
   });
 }
 
-// === Theme Toggle ===
+// Logika untuk toggle tema gelap/terang
 const themeToggle = document.getElementById("theme-toggle");
 const html = document.documentElement;
 
@@ -64,7 +64,7 @@ function updateThemeIcon(isDark) {
 if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
 loadThemePreference();
 
-// === Navbar Scroll ===
+// Logika untuk scroll navbar yang berubah warna saat di scroll
 const navbar = document.getElementById("navbar");
 const navbarTopClasses = ["bg-transparent", "text-white"];
 const navbarScrolledClasses = ["bg-white/80", "text-slate-900", "shadow-lg", "backdrop-blur-md", "dark:bg-slate-900/80", "dark:text-white"];
@@ -83,16 +83,3 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 handleScroll();
-
-// === Smooth Scroll for Nav Links ===
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const targetId = this.getAttribute("href");
-    if (targetId === "#") return;
-    const target = document.querySelector(targetId);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
