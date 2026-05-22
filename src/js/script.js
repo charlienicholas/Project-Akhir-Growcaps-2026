@@ -1,4 +1,4 @@
-// === Mobile Menu ===
+// Logika untuk mobile menu
 const hamburger = document.getElementById("hamburger");
 const closeMenu = document.getElementById("close-menu");
 const mobileMenu = document.getElementById("mobile-menu");
