@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Zaki</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body class="bg-white font-main text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed left-1/2 top-4 z-50 w-[calc(100%-1rem)] max-w-7xl -translate-x-1/2 rounded-full bg-transparent text-white transition-all duration-300 ease-in-out">
+      <div class="flex items-center justify-between px-6 py-4">
+        <a href="../../../index.html" class="flex items-center gap-2 text-xl font-bold tracking-tight">SapuSapu</a>
+
+        <div class="hidden items-center gap-8 font-medium lg:flex">
+          <a href="../../../index.html#" class="nav-link transition hover:opacity-80">Home</a>
+          <a href="../../../index.html#about" class="nav-link transition hover:opacity-80">About</a>
+          <a href="../../../index.html#team" class="nav-link transition hover:opacity-80">Team</a>
+          <a href="../../../index.html#project" class="nav-link transition hover:opacity-80">Project</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" class="cursor-pointer rounded-full p-2 transition hover:bg-white/20" aria-label="Toggle theme">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+              />
+            </svg>
+          </button>
+          <button id="hamburger" class="cursor-pointer rounded-full p-2 transition hover:bg-white/20 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay" class="fixed inset-0 z-40 hidden cursor-pointer bg-black/50 transition-opacity duration-300"></div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-menu" class="fixed right-0 top-0 z-50 h-full w-[65%] max-w-sm translate-x-full bg-white shadow-2xl transition-transform duration-300 ease-in-out dark:bg-slate-800">
+      <div class="p-6">
+        <div class="flex justify-end">
+          <button id="close-menu" class="cursor-pointer rounded-full p-2 transition hover:bg-gray-100 dark:hover:bg-slate-700" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-8 flex flex-col gap-6 text-lg font-medium text-slate-900 dark:text-white">
+          <a href="../../../index.html#" class="mobile-nav-link transition hover:text-dark-blue dark:hover:text-sky-blue">Home</a>
+          <a href="../../../index.html#about" class="mobile-nav-link transition hover:text-dark-blue dark:hover:text-sky-blue">About</a>
+          <a href="../../../index.html#team" class="mobile-nav-link transition hover:text-dark-blue dark:hover:text-sky-blue">Team</a>
+          <a href="../../../index.html#project" class="mobile-nav-link transition hover:text-dark-blue dark:hover:text-sky-blue">Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      id="hero-section"
+      class="relative m-2 flex min-h-[80vh] items-center justify-center overflow-hidden rounded-4xl bg-linear-to-b from-sky-blue to-sky-blue/30 text-white transition-colors duration-300 dark:bg-none dark:rounded-none"
+    >
+      <div class="z-10 max-w-4xl px-4 text-center">
+        <div class="w-48 h-48 md:w-56 md:h-56 rounded-full mx-auto mb-6 overflow-hidden shadow-lg border-4 border-white/20">
+          <img src="../../../assets/img/contoh_tim.jpeg" alt="Zaki" class="w-full h-full object-cover" />
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4">Zaki</h1>
+        <p class="text-xl md:text-2xl text-blue-50/90 italic mb-6">"Design with passion"</p>
+        <p class="text-lg md:text-xl text-blue-50/80 max-w-2xl mx-auto leading-relaxed">
+          Project Lead & Full Stack Developer dengan pengalaman dalam membangun aplikasi web end-to-end. Bersemangat dalam menciptakan solusi teknologi yang efisien dan scalable.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+      <!-- Informasi Pribadi -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Informasi Pribadi</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-light-gray dark:bg-slate-800 p-5 rounded-xl">
+            <span class="text-sm text-gray-500 dark:text-gray-400">Nama Lengkap</span>
+            <p class="font-semibold text-slate-900 dark:text-white">Zaki</p>
+          </div>
+          <div class="bg-light-gray dark:bg-slate-800 p-5 rounded-xl">
+            <span class="text-sm text-gray-500 dark:text-gray-400">Peran</span>
+            <p class="font-semibold text-slate-900 dark:text-white">Project Lead & Full Stack Developer</p>
+          </div>
+          <div class="bg-light-gray dark:bg-slate-800 p-5 rounded-xl">
+            <span class="text-sm text-gray-500 dark:text-gray-400">Lokasi</span>
+            <p class="font-semibold text-slate-900 dark:text-white">Medan, Indonesia</p>
+          </div>
+          <div class="bg-light-gray dark:bg-slate-800 p-5 rounded-xl">
+            <span class="text-sm text-gray-500 dark:text-gray-400">Jurusan</span>
+            <p class="font-semibold text-slate-900 dark:text-white">Teknik Komputer & Informatika</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pendidikan -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Pendidikan</h2>
+        <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl">
+          <h3 class="font-bold text-xl text-slate-900 dark:text-white">Politeknik Negeri Medan</h3>
+          <p class="text-gray-600 dark:text-gray-400">Program Studi: Manajemen Informatika</p>
+          <p class="text-gray-600 dark:text-gray-400">Tahun: 2025 - sekarang</p>
+        </div>
+      </section>
+
+      <!-- Keahlian -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Keahlian</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <!-- HTML & CSS -->
+          <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex flex-col items-center text-center hover:shadow-md transition-shadow group">
+            <div class="w-12 h-12 bg-sky-blue/20 rounded-xl flex items-center justify-center text-dark-blue dark:text-sky-blue mb-4 group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">HTML & CSS</h3>
+          </div>
+          <!-- JavaScript -->
+          <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex flex-col items-center text-center hover:shadow-md transition-shadow group">
+            <div class="w-12 h-12 bg-sky-blue/20 rounded-xl flex items-center justify-center text-dark-blue dark:text-sky-blue mb-4 group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">JavaScript</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hobi & Minat -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Hobi & Minat</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl">
+            <h3 class="font-bold mb-3 text-slate-900 dark:text-white">Hobi</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-sky-blue/30 text-dark-blue dark:text-sky-blue px-3 py-1 rounded-full text-sm">Coding</span>
+              <span class="bg-sky-blue/30 text-dark-blue dark:text-sky-blue px-3 py-1 rounded-full text-sm">Scrolling Fesnuk</span>
+              <span class="bg-sky-blue/30 text-dark-blue dark:text-sky-blue px-3 py-1 rounded-full text-sm">Reading</span>
+              <span class="bg-sky-blue/30 text-dark-blue dark:text-sky-blue px-3 py-1 rounded-full text-sm">Roasting Orang</span>
+            </div>
+          </div>
+          <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl">
+            <h3 class="font-bold mb-3 text-slate-900 dark:text-white">Minat</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-sky-blue/30 text-dark-blue dark:text-sky-blue px-3 py-1 rounded-full text-sm">Web Development</span>
+              <span class="bg-sky-blue/30 text-dark-blue dark:text-sky-blue px-3 py-1 rounded-full text-sm">Artificial Intelligence</span>
+              <span class="bg-sky-blue/30 text-dark-blue dark:text-sky-blue px-3 py-1 rounded-full text-sm">Server</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Target Belajar -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Target Belajar</h2>
+        <div class="bg-sky-blue/20 dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
+          <p class="text-lg leading-relaxed text-slate-900 dark:text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quia quidem beatae expedita hic earum, harum nemo! Assumenda consectetur quaerat numquam architecto sit! Facere aliquam, nobis doloremque quos quo fuga quam.
+          </p>
+        </div>
+      </section>
+
+      <!-- Galeri Pribadi -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Galeri Pribadi</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
+            <img src="" alt="" />
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
+            <img src="" alt="" />
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontak -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Kontak</h2>
+        <div class="flex gap-4 flex-wrap justify-center md:justify-start">
+          <a href="mailto:ahmad@example.com" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+              />
+            </svg>
+            Email
+          </a>
+          <a href="https://github.com" target="_blank" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-5">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+          <a href="https://instagram.com" target="_blank" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75h-9A3.75 3.75 0 0 0 3.75 7.5v9a3.75 3.75 0 0 0 3.75 3.75h9a3.75 3.75 0 0 0 3.75-3.75v-9a3.75 3.75 0 0 0-3.75-3.75Z" />
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </section>
+
+      <!-- Review Teman -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Review dari Teman</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
+            <div class="flex items-center mb-3 text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-gray-700 dark:text-gray-300 mb-3 italic leading-relaxed">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum architecto ipsa eum inventore aperiam! Recusandae maiores placeat ullam laudantium repudiandae."
+            </p>
+            <p class="font-semibold text-slate-900 dark:text-white text-sm">- Charlie Nicholas</p>
+          </div>
+          <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
+            <div class="flex items-center mb-3 text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-gray-700 dark:text-gray-300 mb-3 italic leading-relaxed">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ratione iure ab nisi eaque quas laborum?"</p>
+            <p class="font-semibold text-slate-900 dark:text-white text-sm">- Zaskia</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back Link -->
+      <div class="text-center">
+        <a href="../../../index.html#team" class="inline-flex items-center gap-2 text-dark-blue dark:text-sky-blue font-bold text-lg hover:gap-3 transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+          Kembali ke Tim
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sky-blue py-8 text-white transition-colors duration-300 dark:bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <div class="text-xl font-bold tracking-tight mb-2">SapuSapu</div>
+        <p class="text-sm text-blue-200 dark:text-gray-400">&copy; 2026 SapuSapu Team. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+  </body>
+</html>
