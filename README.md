@@ -24,6 +24,10 @@ Website ini dibuat sebagai landing page dan portofolio kelompok. Halaman utama b
 - Navigasi desktop dan mobile sidebar.
 - Dark mode dengan preferensi yang tersimpan di `localStorage`.
 - Navbar yang berubah tampilan saat halaman di-scroll.
+- Active navigation link sesuai section yang sedang dibuka.
+- Loading screen singkat saat halaman dibuka.
+- Tombol back-to-top setelah user scroll.
+- Lightbox galeri pada halaman profil anggota.
 - Layout responsif untuk mobile, tablet, dan desktop.
 - Galeri gambar anggota.
 - Link kontak dan repository GitHub.
@@ -85,6 +89,7 @@ npm run build
 - Edit styling utama di `src/css/input.css`, lalu jalankan `npm run build` atau `npm run watch`.
 - `src/css/style.css` adalah file hasil build Tailwind. Jangan edit manual kecuali benar-benar diperlukan.
 - Jika menambah class Tailwind baru di HTML/JS, build ulang CSS agar class tersebut masuk ke output.
+- Style tambahan untuk active navigation link berada di `src/css/input.css`.
 - Gambar project dan anggota disimpan di `assets/img/`.
 - Script interaksi global ada di `src/js/script.js`.
 
@@ -126,6 +131,7 @@ Project ini adalah website portofolio kelompok **SapuSapu** yang dibuat sebagai 
 - Navigasi responsif dengan desktop navbar dan mobile sidebar.
 - Dark mode yang bisa di-toggle dan tersimpan di `localStorage`.
 - Efek scroll pada navbar.
+- Active nav link, loading screen, back-to-top, dan lightbox galeri.
 
 Tech stack utama yang digunakan adalah HTML5, Tailwind CSS v4, dan JavaScript vanilla.
 
@@ -226,6 +232,28 @@ Warna custom:
 
 Di Tailwind v4, kustomisasi tema dilakukan lewat CSS variables di blok `@theme`, bukan lewat `tailwind.config.js`.
 
+Selain theme, `input.css` juga menyimpan style kecil untuk state navigasi aktif:
+
+```css
+.nav-link.active {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+.mobile-nav-link.active {
+  color: var(--color-dark-blue);
+  font-weight: 600;
+}
+
+.dark .mobile-nav-link.active {
+  color: var(--color-sky-blue);
+}
+```
+
+Class `active` ditambahkan dan dihapus lewat JavaScript berdasarkan posisi scroll halaman.
+
 ## 5. Halaman Utama
 
 Halaman utama berada di `index.html`. File ini menjadi entry point website dan memuat beberapa section besar.
@@ -264,6 +292,8 @@ Class penting:
 
 Saat halaman di-scroll lebih dari 50px, JavaScript akan mengganti class navbar menjadi background solid dengan blur dan shadow.
 
+Link navbar memakai class `nav-link`, sedangkan link di sidebar mobile memakai class `mobile-nav-link`. JavaScript akan menambahkan class `active` ke link yang sesuai dengan section saat ini. Pada halaman profil anggota, link `Team` otomatis dibuat aktif karena halaman profil berasal dari section anggota.
+
 ### 5.3 Mobile Menu
 
 Mobile sidebar berada di elemen dengan id `mobile-menu`.
@@ -287,7 +317,17 @@ Overlay berada di elemen dengan id `menu-overlay`.
 
 Overlay ditampilkan saat menu mobile terbuka dan bisa diklik untuk menutup menu.
 
-### 5.4 Hero Section
+### 5.4 Loading Screen
+
+Setiap halaman memiliki loading screen di awal body.
+
+```html
+<div id="loading-screen" class="fixed inset-0 z-9999 flex flex-col items-center justify-center ...">
+```
+
+Loading screen menampilkan teks `SapuSapu` dan spinner. JavaScript menyembunyikannya setelah 700ms dengan menambahkan `opacity-0` dan `pointer-events-none`, lalu memberi class `hidden` setelah transisi selesai.
+
+### 5.5 Hero Section
 
 Hero section berada di elemen `#hero-section`.
 
@@ -297,7 +337,7 @@ Hero section berada di elemen `#hero-section`.
 
 Hero menampilkan nama tim, deskripsi singkat, dan tombol menuju section about. Background menggunakan gradient dari `sky-blue` ke `sky-blue/40`. Saat dark mode aktif, background gradient dihilangkan dengan class `dark:bg-none`.
 
-### 5.5 About Section
+### 5.6 About Section
 
 Section `#about` berisi penjelasan singkat tentang tim SapuSapu dan link menuju section anggota.
 
@@ -309,7 +349,7 @@ Section `#about` berisi penjelasan singkat tentang tim SapuSapu dan link menuju 
 - `scroll-mt-24` memberi jarak saat section dituju lewat anchor.
 - `data-aos="fade-up"` mengaktifkan animasi AOS.
 
-### 5.6 Team Section
+### 5.7 Team Section
 
 Section `#team` menampilkan kartu anggota tim.
 
@@ -332,7 +372,7 @@ Efek hover:
 - `group-hover:scale-105` membuat foto membesar saat kartu di-hover.
 - `hover:shadow-xl` memperkuat shadow.
 
-### 5.7 Project Section
+### 5.8 Project Section
 
 Section `#project` menampilkan ringkasan project akhir.
 
@@ -351,7 +391,7 @@ Badge tech stack memakai class seperti:
 </span>
 ```
 
-### 5.8 Footer
+### 5.9 Footer
 
 Footer menampilkan nama tim dan copyright.
 
@@ -360,6 +400,16 @@ Footer menampilkan nama tim dan copyright.
 ```
 
 Footer juga mendukung dark mode lewat `dark:bg-slate-950`.
+
+### 5.10 Back to Top
+
+Halaman utama dan halaman profil memiliki tombol `#back-to-top`.
+
+```html
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 ...">
+```
+
+Tombol ini tersembunyi secara default dengan `opacity-0 invisible`. Setelah user scroll lebih dari 300px, JavaScript menggantinya menjadi `opacity-100 visible`. Saat diklik, halaman akan scroll halus kembali ke atas.
 
 ## 6. Halaman Profil Anggota
 
@@ -448,13 +498,26 @@ Target belajar ditampilkan dalam kotak dengan border kiri.
 
 ### 6.8 Galeri Pribadi
 
-Galeri pribadi menggunakan grid gambar.
+Galeri pribadi menggunakan grid gambar dan setiap item galeri dibungkus dengan tombol `.gallery-item`.
 
 ```html
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<button class="gallery-item group relative aspect-square overflow-hidden rounded-xl ...">
+  <img src="../../../assets/img/Charlie-2.jpg" alt="Charlie" />
+</button>
 ```
 
-Mobile menampilkan 2 kolom, desktop menampilkan 3 kolom.
+Mobile menampilkan 2 kolom, desktop menampilkan 3 kolom. Saat item galeri diklik, JavaScript membuka lightbox.
+
+Setiap halaman profil juga memiliki elemen lightbox:
+
+```html
+<div id="lightbox" class="fixed inset-0 z-9998 hidden items-center justify-center ...">
+  <button id="lightbox-close" aria-label="Tutup">...</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+```
+
+Lightbox bisa ditutup lewat tombol close, klik area overlay, atau tombol `Escape`.
 
 ### 6.9 Kontak
 
@@ -607,10 +670,72 @@ function handleScroll() {
     navbar.classList.add(...navbarTopClasses);
     navbar.classList.remove(...navbarScrolledClasses);
   }
+
+  updateActiveNavLink();
 }
 ```
 
-Jika scroll lebih dari 50px, navbar berubah menjadi solid. Jika kembali ke atas, navbar menjadi transparan lagi.
+Jika scroll lebih dari 50px, navbar berubah menjadi solid. Jika kembali ke atas, navbar menjadi transparan lagi. Fungsi ini juga memanggil `updateActiveNavLink()` untuk memperbarui link navigasi aktif.
+
+### 7.4 Active Navigation Link
+
+JavaScript menyimpan daftar section utama di `navLinkSections`.
+
+```javascript
+const navLinkSections = [
+  { href: "#", sectionId: "hero-section" },
+  { href: "#about", sectionId: "about" },
+  { href: "#team", sectionId: "team" },
+  { href: "#project", sectionId: "project" },
+];
+```
+
+Fungsi `updateActiveNavLink()` menghapus class `active` dari semua link, lalu menambahkannya ke link yang sesuai dengan posisi scroll. Pada halaman profil anggota, fungsi ini langsung mengaktifkan link `Team`.
+
+### 7.5 Back to Top
+
+Tombol back-to-top menggunakan elemen `#back-to-top`.
+
+```javascript
+const backToTop = document.getElementById("back-to-top");
+```
+
+Fungsi `handleBackToTop()` menampilkan tombol ketika `window.scrollY > 300`, dan menyembunyikannya kembali saat user berada di bagian atas halaman.
+
+Saat tombol diklik:
+
+```javascript
+window.scrollTo({ top: 0, behavior: "smooth" });
+```
+
+### 7.6 Loading Screen
+
+Loading screen memakai elemen `#loading-screen`.
+
+```javascript
+const loadingScreen = document.getElementById("loading-screen");
+```
+
+Jika elemen tersedia, script menunggu 700ms, menambahkan class fade-out, lalu menyembunyikan elemen setelah transisi selesai.
+
+### 7.7 Lightbox Galeri
+
+Lightbox menggunakan elemen berikut:
+
+```javascript
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.getElementById("lightbox-close");
+const galleryItems = document.querySelectorAll(".gallery-item");
+```
+
+Saat `.gallery-item` diklik, script mengambil `src` dan `alt` dari gambar di dalamnya, lalu mengisi `#lightbox-img`. Lightbox ditampilkan dengan class `flex` dan body dikunci memakai `overflow-hidden`.
+
+Lightbox bisa ditutup dengan:
+
+- Klik tombol `#lightbox-close`.
+- Klik area overlay lightbox.
+- Tekan tombol `Escape`.
 
 ## 8. Dark Mode
 
@@ -678,8 +803,9 @@ Untuk menambahkan anggota baru:
 4. Tambahkan foto anggota ke `assets/img/`.
 5. Tambahkan card anggota baru di section `#team` pada `index.html`.
 6. Pastikan link card mengarah ke file profil yang benar.
-7. Jalankan `npm run build` jika ada class Tailwind baru.
-8. Cek tampilan mobile, desktop, dan dark mode.
+7. Jika menambahkan galeri, gunakan class `.gallery-item` agar lightbox aktif.
+8. Jalankan `npm run build` jika ada class Tailwind baru.
+9. Cek tampilan mobile, desktop, dark mode, active nav, back-to-top, dan lightbox.
 
 Contoh card anggota:
 
@@ -726,4 +852,5 @@ Dari halaman profil:
 3. Untuk mengganti foto, letakkan gambar di `assets/img/` lalu update atribut `src`.
 4. Jika menambah section baru, ikuti pola section yang sudah ada: punya `id`, padding vertikal, dan class dark mode jika perlu.
 5. Pastikan halaman utama dan semua halaman profil tetap memuat `src/js/script.js` dengan path yang benar.
-6. Cek ulang mobile menu, dark mode, dan link navigasi setelah perubahan HTML.
+6. Jika menambah link navbar atau section baru, update `navLinkSections` di `src/js/script.js`.
+7. Cek ulang mobile menu, dark mode, active nav, back-to-top, loading screen, lightbox, dan link navigasi setelah perubahan HTML.
