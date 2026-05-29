@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile - Zaskia Nurul Khotami</title>
     <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body class="bg-white font-main text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white">
     <!-- Navbar -->
@@ -80,7 +81,7 @@
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-16 md:py-20">
       <!-- Informasi Pribadi -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Informasi Pribadi</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="bg-light-gray dark:bg-slate-800 p-5 rounded-xl">
@@ -103,7 +104,7 @@
       </section>
 
       <!-- Pendidikan -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Pendidikan</h2>
         <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl">
           <h3 class="font-bold text-xl text-slate-900 dark:text-white">Politeknik Negeri Medan</h3>
@@ -113,7 +114,7 @@
       </section>
 
       <!-- Keahlian -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Keahlian</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           <!-- HTML & CSS -->
@@ -138,7 +139,7 @@
       </section>
 
       <!-- Hobi & Minat -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Hobi & Minat</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl">
@@ -162,7 +163,7 @@
       </section>
 
       <!-- Target Belajar -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Target Belajar</h2>
         <div class="bg-sky-blue/20 dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
           <p class="text-lg leading-relaxed text-slate-900 dark:text-white">I want to understand programming langueages more deeply</p>
@@ -170,7 +171,7 @@
       </section>
 
       <!-- Galeri Pribadi -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Galeri Pribadi</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
@@ -186,7 +187,7 @@
       </section>
 
       <!-- Kontak -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Kontak</h2>
         <div class="flex gap-4 flex-wrap justify-center md:justify-start">
           <a href="mailto:zaskiakhatami31@gmail.com" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
@@ -214,14 +215,12 @@
       </section>
 
       <!-- Review Teman -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Review dari Teman</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
             <div class="flex items-center mb-3 text-yellow-400 text-sm">⭐</div>
-            <p class="text-gray-700 dark:text-gray-300 mb-3 italic leading-relaxed">
-              "Apa ya? Pokoknya adalah."
-            </p>
+            <p class="text-gray-700 dark:text-gray-300 mb-3 italic leading-relaxed">"Apa ya? Pokoknya adalah."</p>
             <p class="font-semibold text-slate-900 dark:text-white text-sm">- Charlie Nicholas</p>
           </div>
           <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
@@ -251,6 +250,15 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        delay: 100,
+        offset: 500,
+        once: true,
+      });
+    </script>
     <script src="../../js/script.js"></script>
   </body>
 </html>

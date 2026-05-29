@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile - Charlie Nicholas</title>
     <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body class="bg-white font-main text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white">
     <!-- Navbar -->
@@ -64,8 +65,9 @@
     <section
       id="hero-section"
       class="relative m-2 flex min-h-[85vh] items-center justify-center overflow-hidden rounded-4xl bg-linear-to-b from-sky-blue to-sky-blue/40 text-white transition-colors duration-300 dark:bg-none dark:rounded-none"
+      data-aos="fade-up"
     >
-      <div class="z-10 max-w-4xl px-4 text-center">
+      <div class="z-10 max-w-4xl px-4 text-center" data-aos="fade-up">
         <div class="w-48 h-48 md:w-56 md:h-56 rounded-full mx-auto mb-6 overflow-hidden shadow-lg border-4 border-white/20">
           <img src="../../../assets/img/Charlie.jpeg" alt="Charlie Nicholas" class="w-full h-full object-cover" />
         </div>
@@ -81,7 +83,7 @@
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-16 md:py-20">
       <!-- Informasi Pribadi -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Informasi Pribadi</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="bg-light-gray dark:bg-slate-800 p-5 rounded-xl">
@@ -104,7 +106,7 @@
       </section>
 
       <!-- Pendidikan -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Pendidikan</h2>
         <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl">
           <h3 class="font-bold text-xl text-slate-900 dark:text-white">Politeknik Negeri Medan</h3>
@@ -114,7 +116,7 @@
       </section>
 
       <!-- Keahlian -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Keahlian</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           <!-- HTML & CSS -->
@@ -151,7 +153,7 @@
       </section>
 
       <!-- Hobi & Minat -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Hobi & Minat</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl">
@@ -175,17 +177,18 @@
       </section>
 
       <!-- Target Belajar -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Target Belajar</h2>
         <div class="bg-sky-blue/20 dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
           <p class="text-lg leading-relaxed text-slate-900 dark:text-white">
-            Saat ini sedang menekuni bidang Web Development. Target utama dapat menggunakan HTML, CSS, Javascript, dan PHP. Namun, juga tertarik untuk mempelajari Javascript lebih mendalam seperti NodeJS dan ReactJS. Selain itu juga tertarik belajar menggunakan Typescript.
+            Saat ini sedang menekuni bidang Web Development. Target utama dapat menggunakan HTML, CSS, Javascript, dan PHP. Namun, juga tertarik untuk mempelajari Javascript lebih mendalam seperti NodeJS dan ReactJS. Selain itu juga
+            tertarik belajar menggunakan Typescript.
           </p>
         </div>
       </section>
 
       <!-- Galeri Pribadi -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Galeri Pribadi</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
@@ -201,7 +204,7 @@
       </section>
 
       <!-- Kontak -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Kontak</h2>
         <div class="flex gap-4 flex-wrap justify-center md:justify-start">
           <a href="mailto:charlie@example.com" class="flex items-center gap-2 bg-light-gray dark:bg-slate-800 px-5 py-3 rounded-full hover:bg-sky-blue/30 transition text-slate-900 dark:text-white">
@@ -233,20 +236,18 @@
       </section>
 
       <!-- Review Teman -->
-      <section class="mb-16">
+      <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Review dari Teman</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
             <div class="flex items-center mb-3 text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-gray-700 dark:text-gray-300 mb-3 italic leading-relaxed">
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum architecto ipsa eum inventore aperiam! Recusandae maiores placeat ullam laudantium repudiandae."
-            </p>
+            <p class="text-gray-700 dark:text-gray-300 mb-3 italic leading-relaxed">"Orang yang sangat baik, benar-benar baik dan luar biasa. Dia seperti seorang pahlawan yang membawa kedamaian dan kebahagiaan ke dunia ini."</p>
             <p class="font-semibold text-slate-900 dark:text-white text-sm">- Zaki</p>
           </div>
           <div class="bg-light-gray dark:bg-slate-800 p-6 rounded-xl border-l-4 border-dark-blue dark:border-sky-blue">
             <div class="flex items-center mb-3 text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-gray-700 dark:text-gray-300 mb-3 italic leading-relaxed">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ratione iure ab nisi eaque quas laborum?"</p>
-            <p class="font-semibold text-slate-900 dark:text-white text-sm">- Zaskia</p>
+            <p class="text-gray-700 dark:text-gray-300 mb-3 italic leading-relaxed">"Pria yang sangat tampan dan berwibawa. Dia sangat bijaksana dan benar-benar berwawasan luas"</p>
+            <p class="font-semibold text-slate-900 dark:text-white text-sm">- Kiaa</p>
           </div>
         </div>
       </section>
@@ -270,6 +271,15 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        delay: 100,
+        offset: 500,
+        once: true,
+      });
+    </script>
     <script src="../../js/script.js"></script>
   </body>
 </html>

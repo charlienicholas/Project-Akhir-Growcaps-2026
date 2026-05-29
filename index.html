@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Growcaps - Project Akhir</title>
     <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body class="bg-white font-main text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white">
     <!-- Navbar -->
@@ -62,25 +63,32 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="hero-section" class="relative m-2 flex min-h-[80vh] items-center justify-center overflow-hidden rounded-4xl bg-linear-to-b from-sky-blue to-sky-blue/40 text-white transition-colors duration-300 dark:bg-none dark:rounded-none">
+    <section
+      id="hero-section"
+      class="relative m-2 flex min-h-[80vh] items-center justify-center overflow-hidden rounded-4xl bg-linear-to-b from-sky-blue to-sky-blue/40 text-white transition-colors duration-300 dark:bg-none dark:rounded-none"
+    >
       <div class="z-10 max-w-4xl px-4 text-center">
         <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">SapuSapu Team</h1>
-        <p class="text-lg md:text-xl text-blue-50/90 max-w-2xl mx-auto mb-8 leading-relaxed">Sapu-Sapu team adalah sebuah tim. Sapu-Sapu team dibentuk untuk menjadi sebuah tim. Tujuan Sapu-Sapu team adalah untuk menjadi tim projek tugas akhir Growcaps.</p>
+        <p class="text-lg md:text-xl text-blue-50/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+          Sapu-Sapu team adalah sebuah tim. Sapu-Sapu team dibentuk untuk menjadi sebuah tim. Tujuan Sapu-Sapu team adalah untuk menjadi tim projek tugas akhir Growcaps.
+        </p>
         <a href="#about" class="inline-block rounded-full bg-white px-8 py-3 font-semibold text-slate-900 shadow-lg transition hover:bg-slate-100 dark:bg-sky-blue dark:hover:bg-white"> Explore More </a>
       </div>
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-20 md:py-28 mt-12>
+    <section id="about" class="py-20 md:py-28 scroll-mt-24" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 text-slate-900 dark:text-white">Tentang Kami</h2>
         <div class="max-w-3xl mx-auto text-center">
           <p class="text-lg leading-relaxed mb-6 text-gray-700 dark:text-gray-300">
             Kami adalah
-            <span class="font-semibold text-dark-blue dark:text-sky-blue">SapuSapu</span>, Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iste sequi aspernatur blanditiis rem ab ducimus ea deleniti. Doloremque explicabo maxime reiciendis laboriosam provident iusto voluptates accusantium neque, obcaecati dicta ut? Vero quibusdam sint amet!
+            <span class="font-semibold text-dark-blue dark:text-sky-blue">SapuSapu</span>, Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iste sequi aspernatur blanditiis rem ab ducimus ea deleniti. Doloremque explicabo maxime
+            reiciendis laboriosam provident iusto voluptates accusantium neque, obcaecati dicta ut? Vero quibusdam sint amet!
           </p>
           <p class="text-lg leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, maxime. Mollitia eaque delectus reiciendis iusto! Voluptas, maxime. Mollitia eaque delectus reiciendis iusto! Voluptas, maxime. Mollitia eaque delectus reiciendis iusto!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, maxime. Mollitia eaque delectus reiciendis iusto! Voluptas, maxime. Mollitia eaque delectus reiciendis iusto! Voluptas, maxime. Mollitia eaque delectus
+            reiciendis iusto!
           </p>
           <a href="#team" class="text-dark-blue dark:text-sky-blue font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all text-lg">
             Kenali Lebih Lanjut
@@ -93,7 +101,7 @@
     </section>
 
     <!-- Team Members Section -->
-    <section id="team" class="py-20 md:py-28 bg-white dark:bg-slate-900">
+    <section id="team" class="py-20 md:py-28 bg-white dark:bg-slate-900 scroll-mt-24" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900 dark:text-white">Anggota Tim</h2>
         <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-xl mx-auto">Kenali lebih dekat anggota tim kami yang Jago, Ganteng, Cantik, Pintar, dan Luar Biasa.</p>
@@ -139,7 +147,7 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Zaskia Nurul Khotami</h3>
-              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">DUHHH MALUUU DEHH </p>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">DUHHH MALUUU DEHH</p>
               <a href="src/html/member/zaskia.html" class="text-dark-blue dark:text-sky-blue font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
                 Lihat Profile
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
@@ -154,7 +162,7 @@
 
     <!-- Project Section -->
     <section id="project" class="py-20 md:py-28 bg-light-gray dark:bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-7xl mx-auto px-4 scroll-mt-24" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900 dark:text-white">Project Kami</h2>
         <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-xl mx-auto">Berikut adalah project yang sedang kami kembangkan.</p>
         <div class="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-md p-8 md:p-12 border border-gray-100 dark:border-slate-700">
@@ -191,6 +199,14 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        delay: 100,
+        offset: 500,
+      });
+    </script>
     <script src="src/js/script.js"></script>
   </body>
 </html>
