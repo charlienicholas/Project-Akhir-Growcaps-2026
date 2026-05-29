@@ -168,3 +168,43 @@ if (loadingScreen) {
     );
   }, 700);
 }
+
+// Logika untuk Lightbox Galeri
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.getElementById("lightbox-close");
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+function openLightbox(src, alt) {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || "Gambar galeri";
+  lightbox.classList.remove("hidden");
+  lightbox.classList.add("flex");
+  document.body.classList.add("overflow-hidden");
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.add("hidden");
+  lightbox.classList.remove("flex");
+  document.body.classList.remove("overflow-hidden");
+}
+
+galleryItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const img = item.querySelector("img");
+    if (img) openLightbox(img.src, img.alt);
+  });
+});
+
+if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+if (lightbox) lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && lightbox && !lightbox.classList.contains("hidden")) {
+    closeLightbox();
+  }
+});

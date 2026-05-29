@@ -9,10 +9,7 @@
   </head>
   <body class="bg-white font-main text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white">
     <!-- Loading Screen -->
-    <div
-      id="loading-screen"
-      class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4 bg-white transition-opacity duration-500 dark:bg-slate-900"
-    >
+    <div id="loading-screen" class="fixed inset-0 z-9999 flex flex-col items-center justify-center gap-4 bg-white transition-opacity duration-500 dark:bg-slate-900">
       <div class="text-3xl font-bold tracking-tight text-sky-blue">SapuSapu</div>
       <div class="size-8 animate-spin rounded-full border-4 border-sky-blue/30 border-t-sky-blue"></div>
     </div>
@@ -182,15 +179,30 @@
       <section class="mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Galeri Pribadi</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
-            <img src="../../../assets/img/poto_jaki3.jpeg" alt="" />
-          </div>
-          <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
-            <img src="../../../assets/img/poto_jaki2.jpeg" alt="" />
-          </div>
-          <div class="aspect-square rounded-xl overflow-hidden bg-sky-blue/20 flex items-center justify-center text-dark-blue dark:text-sky-blue font-semibold">
-            <img src="../../../assets/img/poto_jaki1.jpeg" alt="" />
-          </div>
+          <button class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-sky-blue/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-blue focus:ring-offset-2" aria-label="Lihat gambar">
+            <img src="../../../assets/img/poto_jaki3.jpeg" alt="Zaki" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/40">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+              </svg>
+            </div>
+          </button>
+          <button class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-sky-blue/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-blue focus:ring-offset-2" aria-label="Lihat gambar">
+            <img src="../../../assets/img/poto_jaki2.jpeg" alt="Zaki" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/40">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+              </svg>
+            </div>
+          </button>
+          <button class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-sky-blue/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-blue focus:ring-offset-2" aria-label="Lihat gambar">
+            <img src="../../../assets/img/poto_jaki1.jpeg" alt="Zaki" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/40">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+              </svg>
+            </div>
+          </button>
         </div>
       </section>
 
@@ -254,6 +266,7 @@
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
     <button
       id="back-to-top"
       aria-label="Back to top"
@@ -263,6 +276,16 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
       </svg>
     </button>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-9998 hidden items-center justify-center bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Gambar galeri">
+      <button id="lightbox-close" aria-label="Tutup" class="absolute top-4 right-4 z-10 cursor-pointer rounded-full bg-white/20 p-2 text-white transition hover:bg-white/40 focus:outline-none focus:ring-2 focus:ring-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="" class="max-w-[95vw] max-h-[90vh] rounded-lg object-contain shadow-2xl" />
+    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
