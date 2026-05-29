@@ -69,6 +69,49 @@ const navbar = document.getElementById("navbar");
 const navbarTopClasses = ["bg-transparent", "text-white"];
 const navbarScrolledClasses = ["bg-white/80", "text-slate-900", "shadow-lg", "backdrop-blur-md", "dark:bg-slate-900/80", "dark:text-white"];
 
+const navLinkSections = [
+  { href: "#", sectionId: "hero-section" },
+  { href: "#about", sectionId: "about" },
+  { href: "#team", sectionId: "team" },
+  { href: "#project", sectionId: "project" },
+];
+
+function updateActiveNavLink() {
+  const desktopLinks = document.querySelectorAll(".nav-link");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+  const isMemberPage = window.location.pathname.includes("/member/");
+
+  desktopLinks.forEach((l) => l.classList.remove("active"));
+  mobileLinks.forEach((l) => l.classList.remove("active"));
+
+  if (isMemberPage) {
+    desktopLinks.forEach((l) => {
+      if (l.textContent.trim() === "Team") l.classList.add("active");
+    });
+    mobileLinks.forEach((l) => {
+      if (l.textContent.trim() === "Team") l.classList.add("active");
+    });
+    return;
+  }
+
+  const scrollPos = window.scrollY + 250;
+  let activeHref = "#";
+
+  for (const s of navLinkSections) {
+    const el = document.getElementById(s.sectionId);
+    if (el && el.offsetTop <= scrollPos) {
+      activeHref = s.href;
+    }
+  }
+
+  desktopLinks.forEach((l) => {
+    if (l.getAttribute("href") === activeHref) l.classList.add("active");
+  });
+  mobileLinks.forEach((l) => {
+    if (l.getAttribute("href") === activeHref) l.classList.add("active");
+  });
+}
+
 function handleScroll() {
   if (!navbar) return;
 
@@ -79,7 +122,33 @@ function handleScroll() {
     navbar.classList.add(...navbarTopClasses);
     navbar.classList.remove(...navbarScrolledClasses);
   }
+
+  updateActiveNavLink();
 }
 
 window.addEventListener("scroll", handleScroll);
 handleScroll();
+
+// Logika untuk tombol Back to Top
+const backToTop = document.getElementById("back-to-top");
+
+function handleBackToTop() {
+  if (!backToTop) return;
+
+  if (window.scrollY > 300) {
+    backToTop.classList.remove("opacity-0", "invisible");
+    backToTop.classList.add("opacity-100", "visible");
+  } else {
+    backToTop.classList.add("opacity-0", "invisible");
+    backToTop.classList.remove("opacity-100", "visible");
+  }
+}
+
+if (backToTop) {
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+window.addEventListener("scroll", handleBackToTop);
+handleBackToTop();
