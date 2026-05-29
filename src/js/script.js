@@ -152,3 +152,19 @@ if (backToTop) {
 
 window.addEventListener("scroll", handleBackToTop);
 handleBackToTop();
+
+// Logika untuk Loading Screen
+const loadingScreen = document.getElementById("loading-screen");
+
+if (loadingScreen) {
+  setTimeout(() => {
+    loadingScreen.classList.add("opacity-0", "pointer-events-none");
+    loadingScreen.addEventListener(
+      "transitionend",
+      () => {
+        loadingScreen.classList.add("hidden");
+      },
+      { once: true },
+    );
+  }, 700);
+}
