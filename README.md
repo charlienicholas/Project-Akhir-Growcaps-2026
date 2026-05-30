@@ -12,6 +12,7 @@ Website ini dibuat sebagai landing page dan portofolio kelompok. Halaman utama b
 - **Tailwind CSS v4** untuk styling dan responsive design.
 - **JavaScript vanilla** untuk menu mobile, dark mode, dan efek navbar saat scroll.
 - **AOS (Animate On Scroll)** dari CDN untuk animasi saat elemen masuk viewport.
+- **GSAP** dari CDN untuk animasi halus pada navbar.
 - **Google Fonts Montserrat** sebagai font utama.
 
 ## Fitur
@@ -24,6 +25,7 @@ Website ini dibuat sebagai landing page dan portofolio kelompok. Halaman utama b
 - Navigasi desktop dan mobile sidebar.
 - Dark mode dengan preferensi yang tersimpan di `localStorage`.
 - Navbar yang berubah tampilan saat halaman di-scroll.
+- Animasi scale navbar dengan GSAP saat state scroll berubah.
 - Active navigation link sesuai section yang sedang dibuka.
 - Loading screen singkat saat halaman dibuka.
 - Tombol back-to-top setelah user scroll.
@@ -131,6 +133,7 @@ Project ini adalah website portofolio kelompok **SapuSapu** yang dibuat sebagai 
 - Navigasi responsif dengan desktop navbar dan mobile sidebar.
 - Dark mode yang bisa di-toggle dan tersimpan di `localStorage`.
 - Efek scroll pada navbar.
+- Animasi navbar berbasis GSAP dengan dukungan `prefers-reduced-motion`.
 - Active nav link, loading screen, back-to-top, dan lightbox galeri.
 
 Tech stack utama yang digunakan adalah HTML5, Tailwind CSS v4, dan JavaScript vanilla.
@@ -294,6 +297,8 @@ Saat halaman di-scroll lebih dari 50px, JavaScript akan mengganti class navbar m
 
 Link navbar memakai class `nav-link`, sedangkan link di sidebar mobile memakai class `mobile-nav-link`. JavaScript akan menambahkan class `active` ke link yang sesuai dengan section saat ini. Pada halaman profil anggota, link `Team` otomatis dibuat aktif karena halaman profil berasal dari section anggota.
 
+Di halaman utama, GSAP dimuat dari CDN sebelum `src/js/script.js`. Script memakai GSAP untuk memberi animasi scale ringan pada navbar ketika state scroll berubah. Jika user mengaktifkan reduced motion di sistem, animasi GSAP dilewati.
+
 ### 5.3 Mobile Menu
 
 Mobile sidebar berada di elemen dengan id `mobile-menu`.
@@ -380,7 +385,7 @@ Isi section:
 
 - Judul project.
 - Deskripsi project.
-- Badge tech stack.
+- Badge tech stack: HTML, Tailwind CSS, JavaScript, AOS, dan GSAP.
 - Tombol link ke repository GitHub.
 
 Badge tech stack memakai class seperti:
@@ -657,13 +662,22 @@ Class saat halaman di-scroll:
 const navbarScrolledClasses = ["bg-white/80", "text-slate-900", "shadow-lg", "backdrop-blur-md", "dark:bg-slate-900/80", "dark:text-white"];
 ```
 
+Script juga menyimpan state scroll terakhir dan membaca preferensi motion user:
+
+```javascript
+let isNavbarScrolled = null;
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+```
+
 Fungsi `handleScroll()`:
 
 ```javascript
 function handleScroll() {
   if (!navbar) return;
 
-  if (window.scrollY > 50) {
+  const scrolled = window.scrollY > 50;
+
+  if (scrolled) {
     navbar.classList.add(...navbarScrolledClasses);
     navbar.classList.remove(...navbarTopClasses);
   } else {
@@ -672,10 +686,22 @@ function handleScroll() {
   }
 
   updateActiveNavLink();
+
+  if (window.gsap && !prefersReducedMotion && scrolled !== isNavbarScrolled) {
+    isNavbarScrolled = scrolled;
+    gsap.to(navbar, {
+      scale: scrolled ? 0.98 : 1,
+      y: 0,
+      xPercent: -50,
+      duration: 0.25,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  }
 }
 ```
 
-Jika scroll lebih dari 50px, navbar berubah menjadi solid. Jika kembali ke atas, navbar menjadi transparan lagi. Fungsi ini juga memanggil `updateActiveNavLink()` untuk memperbarui link navigasi aktif.
+Jika scroll lebih dari 50px, navbar berubah menjadi solid. Jika kembali ke atas, navbar menjadi transparan lagi. Fungsi ini juga memanggil `updateActiveNavLink()` untuk memperbarui link navigasi aktif. Jika GSAP tersedia dan user tidak mengaktifkan reduced motion, navbar diberi animasi scale singkat saat berpindah antara state top dan scrolled.
 
 ### 7.4 Active Navigation Link
 
@@ -853,4 +879,4 @@ Dari halaman profil:
 4. Jika menambah section baru, ikuti pola section yang sudah ada: punya `id`, padding vertikal, dan class dark mode jika perlu.
 5. Pastikan halaman utama dan semua halaman profil tetap memuat `src/js/script.js` dengan path yang benar.
 6. Jika menambah link navbar atau section baru, update `navLinkSections` di `src/js/script.js`.
-7. Cek ulang mobile menu, dark mode, active nav, back-to-top, loading screen, lightbox, dan link navigasi setelah perubahan HTML.
+7. Cek ulang mobile menu, dark mode, active nav, animasi navbar, back-to-top, loading screen, lightbox, dan link navigasi setelah perubahan HTML.
