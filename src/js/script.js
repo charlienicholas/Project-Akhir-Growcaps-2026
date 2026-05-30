@@ -112,10 +112,15 @@ function updateActiveNavLink() {
   });
 }
 
+let isNavbarScrolled = null;
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 function handleScroll() {
   if (!navbar) return;
 
-  if (window.scrollY > 50) {
+  const scrolled = window.scrollY > 50;
+
+  if (scrolled) {
     navbar.classList.add(...navbarScrolledClasses);
     navbar.classList.remove(...navbarTopClasses);
   } else {
@@ -124,6 +129,18 @@ function handleScroll() {
   }
 
   updateActiveNavLink();
+
+  if (window.gsap && !prefersReducedMotion && scrolled !== isNavbarScrolled) {
+    isNavbarScrolled = scrolled;
+    gsap.to(navbar, {
+      scale: scrolled ? 0.98 : 1,
+      y: 0,
+      xPercent: -50,
+      duration: 0.25,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  }
 }
 
 window.addEventListener("scroll", handleScroll);
